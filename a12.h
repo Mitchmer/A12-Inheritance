@@ -4,17 +4,19 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
-const int MAX_PEOPLE {20};
+const int MAX_STUDENTS {3};
+const int MAX_PEOPLE {2};
 
 class personType {
-    private:
 
     //====================================================================
     //  Member variables
     //====================================================================
+    private:
         string fName;
         string lName;
         string address;
@@ -22,13 +24,12 @@ class personType {
         string DOB;
         char gender;
 
-    public:
-
     //====================================================================
     //  Member Methods
     //====================================================================
     //  Constructors
     //====================================================================
+    public:
 
         personType();
             //  first name, last name
@@ -68,8 +69,56 @@ class personType {
     //  Other
     //====================================================================
 
-        void print();
-        bool isEqualTo(personType&);
+        void print() const;
+        bool isEqualTo(personType&) const;
+};
+
+class studentType : public personType {
+
+    //====================================================================
+    //  Member variables
+    //====================================================================
+    private:
+
+        string id;
+        double gpa;
+        string classification;
+
+    //====================================================================
+    //  Member Methods
+    //====================================================================
+    public:
+
+    //====================================================================
+    //  Constructors
+    //====================================================================
+        studentType();
+            //    first name, last name
+        studentType(string, string);
+            //    first name, last name, GPA, classification, id
+        studentType(string, string, double, string, string);
+
+    //====================================================================
+    //  Mutators
+    //====================================================================
+        void setID(string);
+        void setGPA(double);
+        void setClassification(string);
+    
+    //====================================================================
+    //  Accessors
+    //====================================================================
+        string getID() const;
+        double getGPA() const;
+        string getClassification() const;
+    
+    //====================================================================
+    //  Other
+    //====================================================================
+        // Overrides personType print
+        void print() const;
+        // Overrides personType isEqualTo
+        bool isEqualTo(studentType&) const;
 };
 
 //==================================================================
@@ -77,6 +126,6 @@ class personType {
 //==================================================================
 
 void readFile(ifstream&, personType[]);
-void splitName(string, personType&, string&, string&);
+void splitName(string, const personType&, string&, string&);
 
 #endif

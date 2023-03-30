@@ -18,6 +18,10 @@ personType::personType() {
 personType::personType(string firstName, string lastName) {
     fName = firstName;
     lName = lastName;
+    address = "DEFAULT ADDRESS";
+    height = 5.0;
+    DOB = "11/11/2011";
+    gender = 'U';
 }
 
 personType::personType(string firstName, string lastName, string addressStr, double heightNum, string dobStr, char gen) {
@@ -103,15 +107,16 @@ char personType::getGender() const {
 //  Helper functions
 //===================================================
 
-void personType::print() {
-    cout << fName << " " << lName << endl
-         << address << endl
-         << height << endl
-         << DOB << endl
-         << gender << endl << endl;
+void personType::print() const {
+    cout << "**********************************************" << endl;
+    cout << "Name: " << fName << " " << lName << endl
+         << "Address: " << address << endl
+         << "Height: " << height << endl
+         << "DOB: " << DOB << endl
+         << "Gender: " << gender << endl;
 }
 
-bool personType::isEqualTo(personType &person) {
+bool personType::isEqualTo(personType &person) const {
     bool result {};
 
     if (

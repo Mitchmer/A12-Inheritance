@@ -38,7 +38,7 @@ void readFile(ifstream &inFile, personType people[]) {
     return;
 }
 
-void splitName(string fullName, personType &person, string &firstName, string &lastName) {
+void splitName(string fullName, const personType &person, string &firstName, string &lastName) {
     int endPos {};
 
     for (size_t i {}; i < fullName.length(); i++) {
