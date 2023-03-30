@@ -3,6 +3,41 @@
 //==================================================
 //  Member Definitions
 //==================================================
+//  Constructors
+//==================================================
+
+personType::personType() {
+    fName = "DEFAULT";
+    lName = "DEFAULT";
+    address = "DEFAULT ADDRESS";
+    height = 5.0;
+    DOB = "11/11/2011";
+    gender = 'U';
+}
+
+personType::personType(string firstName, string lastName) {
+    fName = firstName;
+    lName = lastName;
+}
+
+personType::personType(string firstName, string lastName, string addressStr, double heightNum, string dobStr, char gen) {
+    fName = firstName;
+    lName = lastName;
+    address = addressStr;
+    height = heightNum;
+    DOB = dobStr;
+    gender = gen;
+}
+
+//==================================================
+//  Destructor
+//==================================================
+
+personType::~personType() {
+    cout << fName << " was destroyed" << endl;
+}
+
+//==================================================
 //  Mutators
 //==================================================
 
