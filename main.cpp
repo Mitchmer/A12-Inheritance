@@ -37,9 +37,9 @@ int main() {
     studentType students[MAX_STUDENTS] {};
     personType people[MAX_PEOPLE] {};
 
-    studentType student1("Harry", "Potter", 3.5,  "Wizard", "23489057-9");
-    studentType student2("Luke", "Skywalker", 3.7, "Jedi", "51723956-4");
-    studentType student3("Lara", "Croft", 3.9, "Tomb Raider", "12309453-9");
+    studentType student1("Harry", "Potter", 3.5,  "Sophomore", "23489057-9");
+    studentType student2("Luke", "Skywalker", 3.7, "Junior", "51723956-4");
+    studentType student3("Lara", "Croft", 3.9, "Senior", "12309453-9");
 
     student1.setAddress("3593 Hillhaven Drive");
     student1.setHeight(5.2);
